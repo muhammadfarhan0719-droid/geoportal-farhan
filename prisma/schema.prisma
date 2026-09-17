@@ -27,3 +27,21 @@ model users {
   nama            String?           @db.VarChar
   katalog_data_2d katalog_data_2d[]
 }
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model katalog_data_3d {
+  data_3d_id String? @db.VarChar(50)
+  author     String? @db.VarChar(50)
+  nama       String? @db.VarChar(50)
+  akses      String? @db.VarChar(50)
+  url        String? @db.VarChar(128)
+  latitude   Float?  @db.Real
+  longitude  Float?  @db.Real
+  heading    Int?
+  pitch      Int?
+  roll       Int?
+  scale      Int?
+  tipe_file  String? @db.VarChar(50)
+
+  @@ignore
+}
